@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./libs/OwlCarousel2-2.3.4/docs/assets/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="./libs/OwlCarousel2-2.3.4/docs/assets/owlcarousel/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="container-full">
+            <div class="container header__top">
+                <div class="header__location">
+                    <i class="fal fa-map-marker-alt header__location-icon"></i>
+                    <span>Cửa hàng</span>
+                </div>
+                <div class="header__phone">
+                    <i class="fal fa-phone-alt header__phone-icon"></i>
+                    <span>+84 898 374 553</span>
+                </div>
+            </div>
+            <div class="header__middle">
+                <div class="container header__middle-wrap">
+
+                    <div class="header__logo">
+                        <img src="./images/logo.svg" alt="">
+                    </div>
+                    <div class="header__wrapper-search">
+                        <input class="search-input" type="text" placeholder="Tìm kiếm thương hiệu, sản phẩm">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                    <div class="header__wrapRight">
+                        <div class="wrap-user">
+                            <i class="far fa-user user-icon"></i>
+                            <span> Tài khoản</span>
+                        </div>
+                        <div class="wrap-cart">
+                            <i class="far fa-shopping-cart cart-icon"></i>
+                            <span> Giỏ hàng</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="header__bottom">
+                <div class="container">
+                    <ul class="menu__list">
+                        <li class="menu__item">Thương hiệu</li>
+                        <li class="menu__item">Đồng hồ nam</li>
+                        <li class="menu__item">Đồng hồ nữ</li>
+                        <li class="menu__item">Ưu đãi</li>
+                    </ul>
+
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section class="slider">
+        <div class="owl-carousel owl-theme">
+            <div class="slider__item" style="background-image: url(../images/banner-citizen.jpg);">
+
+            </div>
+            <div class="slider__item" style="background-image: url(../images/banner-jowissa.jpg);">
+
+            </div>
+            <div class="slider__item" style="background-image: url(../images/banner-seiko.jpg);">
+
+            </div>
+        </div>
+
+    </section>
+    <section class="service">
+        <ul class="service__list">
+            <li class="service__item">
+                <i class="fas fa-plane service__item-icon"></i>
+                <span class="service__item-title">Freeship toàn quốc</span>
+            </li>
+            <li class="service__item">
+                <i class="fas fa-wrench service__item-icon"></i>
+                <span class="service__item-title">Bảo hành lên đến 5 năm</span>
+            </li>
+            <li class="service__item">
+                <i class="fas fa-sync-alt service__item-icon"></i>
+                <span class="service__item-title">Thay pin miễn phí trọn đời</span>
+            </li>
+            <li class="service__item">
+                <i class="fab fa-cc-visa service__item-icon"></i>
+                <span class="service__item-title">Thanh toán an toàn bảo mật</span>
+            </li>
+
+        </ul>
+    </section>
+
+    <section class="category">
+        <ul class="container category__list">
+            <li class="category__item">
+                <a href="#">
+                    <div style="background-image: url(./images/Category-1.jpg);" class="category__item-img"></div>
+                    <div class="category__item-title">Thương hiệu</div>
+                </a>
+            </li>
+            <li class="category__item">
+                <a href="#">
+                    <div style="background-image: url(./images/Category-4.jpg);" class="category__item-img"></div>
+                    <div class="category__item-title">Đồng hồ nam</div>
+                </a>
+            </li>
+            <li class="category__item">
+                <a href="#">
+                    <div style="background-image: url(./images/Category-3.jpg);" class="category__item-img"></div>
+                    <div class="category__item-title">Đồng hồ nữ</div>
+                </a>
+            </li>
+            <li class="category__item">
+                <a href="#">
+                    <div style="background-image: url(./images/Category-2.jpg);" class="category__item-img"></div>
+                    <div class="category__item-title"> Khuyến mãi</div>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <section class="search">
+        <!-- <div class="search__pre"><i class="fal fa-angle-left"></i></div>
+        <div class="search__next"><i class="fal fa-angle-right"></i></div> -->
+        <div class="container">
+            <div class="search__title">
+                <i class="fal fa-hand-point-right search__title-icon"></i>
+                <h3 class="search__title-name">Tìm kiếm nhiều nhất</h3>
+            </div>
+
+            <div class="search__item">
+                <div class="search__tagname">
+                    <div class="search__tagname-item"></div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <footer class="footer"></footer>
+
+    <script src="./libs/OwlCarousel2-2.3.4/docs/assets/vendors/jquery.min.js"></script>
+    <script src="./libs/OwlCarousel2-2.3.4/docs/assets/owlcarousel/owl.carousel.js"></script>
+    <script>
+        $(document).ready(function() {
+            var owl = $(".slider .owl-carousel");
+            owl.owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 3000,
+
+            })
+        });
+    </script>
+</body>
+
+</html>
