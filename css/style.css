@@ -146,32 +146,37 @@ body {
 }
 .header .menu__list {
   display: flex;
-  justify-content: space-around;
   position: relative;
 }
-.header .menu__item {
+.header .menu__list .menu__item {
   cursor: pointer;
   font-size: 1.6rem;
-  margin: 0 4rem;
   text-transform: uppercase;
   padding: 1.4rem 5rem 1rem;
   font-weight: 500;
   transition: color 0.3s;
 }
+.header .menu__list .menu__item:first-child {
+  padding-left: 15rem;
+}
 .header .menu__item:hover {
   color: #1890ff;
 }
 .header .menu__submenu {
-  width: 100%;
+  cursor: default;
+  width: 1210px;
   height: 47rem;
   position: absolute;
   top: 85%;
+  left: 0;
   background-color: white;
   z-index: 2;
+  color: #676a6c;
   display: none;
   justify-content: space-between;
   box-shadow: 0px 4px 6px 2px #c4c4c4;
   border-radius: 6px;
+  box-sizing: border-box;
 }
 .header .menu__submenu .menu__category {
   width: 55%;
@@ -186,7 +191,7 @@ body {
   width: 25%;
   font-size: 1.6rem;
   text-align: left;
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
   transition: color 0.3s;
 }
 .header .menu__submenu .menu__category-item:hover {
@@ -201,8 +206,11 @@ body {
 .header .menu__submenu .menu__ads-item {
   width: 45%;
   height: 100%;
+  cursor: pointer;
 }
 .header .menu__submenu .menu__ads-item--img {
+  width: 100%;
+  height: 85%;
   object-fit: cover;
 }
 .header .menu__submenu .menu__ads-item--title {
@@ -216,12 +224,7 @@ body {
   text-align: center;
   color: #1890ff;
 }
-.header .menu__submenu::after {
-  width: 5rem;
-  height: 100%;
-  background: yellow;
-}
-.header .menu__item:hover + ul.menu__submenu {
+.header .menu__item:hover ul.menu__submenu {
   display: flex;
 }
 
