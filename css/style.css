@@ -59,7 +59,6 @@ body {
   box-shadow: 0px 2px 8px 2px #00000029;
   transition: 0.4s;
   position: relative;
-  transform: attr(data-animate);
 }
 .header__top {
   font-size: 1.4rem;
@@ -1016,7 +1015,7 @@ body {
 }
 
 hr {
-  border: 0.1px solid rgba(103, 106, 108, 0.6);
+  border: 0.1px solid #cccfcf;
 }
 
 /*# sourceMappingURL=style.css.map */
