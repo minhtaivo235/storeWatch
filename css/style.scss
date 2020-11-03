@@ -1,9 +1,10 @@
 $gray-color: rgb(103, 106, 108);
-$background-color: rgb(196, 196, 196);
+$background-color: #e0e0e0;
 $black-color: rgb(0, 0, 0);
 $border-color: rgba(0, 0, 0, 0.1);
 $brand-color: rgb(232, 51, 11);
 $primary-color: rgb(24, 144, 255);
+
 html,
 body {
   width: 100%;
@@ -233,6 +234,11 @@ body {
 .header {
   padding-top: 1rem;
   height: 15.5rem;
+  position: fixed;
+  z-index: 999;
+
+  background-color: white;
+  box-shadow: 0px 2px 8px 2px #00000029;
   &__top {
     font-size: 1.4rem;
     display: flex;
@@ -326,7 +332,6 @@ body {
   }
   &__bottom {
     height: 5rem;
-    box-shadow: 0px 6px 5px 2px rgba(0, 0, 0, 0.1);
   }
   .menu {
     &__list {
@@ -415,6 +420,7 @@ body {
       }
     }
 
+    &__item:active ul.menu__submenu,
     &__item:hover ul.menu__submenu {
       display: flex;
     }
@@ -545,7 +551,96 @@ body {
   @include owl-nav-center();
   z-index: 3;
 }
+.about-us {
+  margin-bottom: 2rem;
+  &__title {
+    font-size: 3.2rem;
+    color: $black-color;
+    font-weight: 400;
+    text-align: center;
+  }
+  &__content {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    line-height: 2.4rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipse;
+    overflow: hidden;
+  }
+}
+.w-25 {
+  width: 25%;
+}
+.w-17 {
+  width: 17%;
+}
 
 .footer {
-  margin-top: 16rem;
+  width: 100vw;
+  background-color: $background-color;
+  color: $black-color;
+  padding-bottom: 1rem;
+  .social {
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: flex-end;
+    &__link {
+      margin: 2rem 3rem 1rem;
+      font-weight: 400;
+      &-icon {
+        display: block;
+        text-align: center;
+        margin-bottom: 0.5rem;
+        font-size: 3rem;
+        color: $gray-color;
+      }
+    }
+  }
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    .footer__item {
+      margin: 4rem 0 1rem;
+      .logo-footer {
+        width: 13rem;
+        height: 13rem;
+        margin: -4rem 0 -3rem 2rem;
+      }
+      .content {
+        font-size: 1.6rem;
+        color: $gray-color;
+      }
+      .content__title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .content__link {
+        display: block;
+        font-size: 1.4rem;
+        margin: 1rem 0;
+      }
+      .working-time {
+        font-size: 1.4rem;
+        display: flex;
+        span:first-child {
+          margin-right: 3rem;
+        }
+        .day-work {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+  &__bottom {
+    p {
+      text-align: center;
+      font-size: 1.4rem;
+    }
+  }
+}
+hr {
+  border: 0.1px solid rgb(103, 106, 108, 0.6);
 }
