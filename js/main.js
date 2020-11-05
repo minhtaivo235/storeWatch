@@ -3,137 +3,141 @@ function nav(url) {
     window.location.href = getUrl;
 }
 
-const header = document.querySelector('.header');
-const slider = document.querySelector('.slider');
-let statusChangeHeader = false;
-let owlSlider = $(".slider .owl-carousel");
-let owlSearch = $(".search .owl-carousel");
-let owlProduct = $('.new-product .owl-carousel, .best-sale-product .owl-carousel, .best-view-product .owl-carousel');
+window.addEventListener('DOMContentLoaded', function () {
 
-if (window.innerWidth > 1023) {
+    const header = document.querySelector('.header');
+    const slider = document.querySelector('.slider');
+    let statusChangeHeader = false;
+    let owlSlider = $(".slider .owl-carousel");
+    let owlSearch = $(".search .owl-carousel");
+    let owlProduct = $('.new-product .owl-carousel, .best-sale-product .owl-carousel, .best-view-product .owl-carousel');
 
-    owlSlider.owlCarousel({
-        items: 1,
-        loop: true,
-        autoplay: true,
-        autoplayTimeout: 3000
+    if (window.innerWidth >= 1023) {
 
-    });
-    owlSearch.owlCarousel({
-        items: 5,
-        loop: false,
-        nav: true,
-        dots: false
-    });
-    owlProduct.owlCarousel({
-        items: 4,
-        loop: false,
-        nav: true,
-        dots: false,
-        margin: 10
-    });
+        owlSlider.owlCarousel({
+            items: 1,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 3000
 
-    let scrollPos = 0;
+        });
+        owlSearch.owlCarousel({
+            items: 5,
+            loop: false,
+            nav: true,
+            dots: false
+        });
+        owlProduct.owlCarousel({
+            items: 4,
+            loop: false,
+            nav: true,
+            dots: false,
+            margin: 10
+        });
 
-    document.addEventListener("scroll", function () {
-        if (!statusChangeHeader) {
-            if (window.scrollY >= (slider.offsetTop + 300)) {
-                header.classList.add('posi-fixed');
-                statusChangeHeader = true;
+        let scrollPos = 0;
+
+        document.addEventListener("scroll", function () {
+            if (!statusChangeHeader) {
+                if (window.scrollY >= (slider.offsetTop + 300)) {
+                    header.classList.add('posi-fixed');
+                    statusChangeHeader = true;
+                }
+
             }
-
-        }
-        else {
-            if (window.scrollY < (slider.offsetTop + 300)) {
-                header.classList.remove('posi-fixed');
-                statusChangeHeader = false;
+            else {
+                if (window.scrollY < (slider.offsetTop + 300)) {
+                    header.classList.remove('posi-fixed');
+                    statusChangeHeader = false;
+                }
             }
-        }
-        // detects new state and compares it with the new one
-        if ((document.body.getBoundingClientRect()).top > scrollPos)
-            // document.querySelector('.header').setAttribute('data-animate', 'skewX(8deg) rotateX(5deg)');
-            document.querySelector('.header').style.transform = 'skewX(1deg) translateY(-0.2rem)';
-        else
-            // document.querySelector('.header').setAttribute('data-animate', 'skewX(-8deg) rotateX(-5deg)');
-            document.querySelector('.header').style.transform = 'skewX(-1deg) translateY(0.2rem)';
-        // saves the new position for iteration.
-        scrollPos = (document.body.getBoundingClientRect()).top;
-        setTimeout(function () {
-            document.querySelector('.header').style.transform = '';
-        }, 200);
-    })
-}
-if ((window.innerWidth <= 1023) && (window.innerWidth > 740)) {
-    owlSearch.owlCarousel({
-        items: 3,
-        loop: false,
-        nav: true,
-        dots: false
-    });
+            // detects new state and compares it with the new one
+            if ((document.body.getBoundingClientRect()).top > scrollPos)
+                // document.querySelector('.header').setAttribute('data-animate', 'skewX(8deg) rotateX(5deg)');
+                document.querySelector('.header').style.transform = 'skewX(1deg) translateY(-0.2rem)';
+            else
+                // document.querySelector('.header').setAttribute('data-animate', 'skewX(-8deg) rotateX(-5deg)');
+                document.querySelector('.header').style.transform = 'skewX(-1deg) translateY(0.2rem)';
+            // saves the new position for iteration.
+            scrollPos = (document.body.getBoundingClientRect()).top;
+            setTimeout(function () {
+                document.querySelector('.header').style.transform = '';
+            }, 200);
+        })
+    }
+    if ((window.innerWidth < 1023) && (window.innerWidth > 740)) {
+        owlSearch.owlCarousel({
+            items: 3,
+            loop: false,
+            nav: true,
+            dots: false
+        });
 
-    owlProduct.owlCarousel({
-        items: 3,
-        loop: false,
-        nav: true,
-        dots: false,
-        margin: 10
-    });
+        owlProduct.owlCarousel({
+            items: 3,
+            loop: false,
+            nav: true,
+            dots: false,
+            margin: 10
+        });
 
-    let header_bottom = document.querySelector('.header .header__bottom');
+        let header_bottom = document.querySelector('.header .header__bottom');
 
 
-    document.addEventListener("scroll", function () {
-        if (!statusChangeHeader) {
-            if (window.scrollY > 50) {
-                header_bottom.classList.add('d-none');
-                header.classList.add('fixed');
-                statusChangeHeader = true;
+        document.addEventListener("scroll", function () {
+            if (!statusChangeHeader) {
+                if (window.scrollY > 50) {
+                    header_bottom.classList.add('d-none');
+                    header.classList.add('fixed');
+                    statusChangeHeader = true;
+                }
+
             }
-
-        }
-        else {
-            if (window.scrollY <= 50) {
-                header_bottom.classList.remove('d-none');
-                header.classList.remove('fixed');
-                statusChangeHeader = false;
+            else {
+                if (window.scrollY <= 50) {
+                    header_bottom.classList.remove('d-none');
+                    header.classList.remove('fixed');
+                    statusChangeHeader = false;
+                }
             }
-        }
-    });
-}
-else {
-    owlSearch.owlCarousel({
-        items: 2,
-        loop: false,
-        nav: true,
-        dots: false
-    });
+        });
+    }
+    if (window.innerWidth <= 739) {
+        owlSearch.owlCarousel({
+            items: 2,
+            loop: false,
+            nav: true,
+            dots: false
+        });
 
-    owlProduct.owlCarousel({
-        items: 2,
-        loop: false,
-        nav: true,
-        dots: false,
-        margin: 10
-    });
-    let header_bottom = document.querySelector('.header .header__bottom');
-    document.addEventListener("scroll", function () {
-        if (!statusChangeHeader) {
-            if (window.scrollY > 50) {
-                header_bottom.classList.add('d-none');
-                header.classList.add('fixed');
-                statusChangeHeader = true;
-            }
+        owlProduct.owlCarousel({
+            items: 2,
+            loop: false,
+            nav: true,
+            dots: false,
+            margin: 10
+        });
+        let header_bottom = document.querySelector('.header .header__bottom');
+        document.addEventListener("scroll", function () {
+            if (!statusChangeHeader) {
+                if (window.scrollY > 50) {
+                    header_bottom.classList.add('d-none');
+                    header.classList.add('fixed');
+                    statusChangeHeader = true;
+                }
 
-        }
-        else {
-            if (window.scrollY <= 50) {
-                header_bottom.classList.remove('d-none');
-                header.classList.remove('fixed');
-                statusChangeHeader = false;
             }
-        }
-    });
-}
+            else {
+                if (window.scrollY <= 50) {
+                    header_bottom.classList.remove('d-none');
+                    header.classList.remove('fixed');
+                    statusChangeHeader = false;
+                }
+            }
+        });
+    }
+})
+
 
 
 
