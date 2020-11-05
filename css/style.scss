@@ -8,7 +8,7 @@ $primary-color: rgb(24, 144, 255);
 html,
 body {
   font-size: 62.5%; // 1rem = 10px
-  // overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 *,
@@ -747,11 +747,14 @@ hr {
       }
     }
     &__bottom {
+      padding: 1rem 0;
       .menu__list {
+        justify-content: space-around;
         .menu__item:first-child {
-          padding-left: 5rem;
+          padding-left: unset;
         }
         .menu__item {
+          padding: unset;
           font-size: 1.2rem;
           a {
             display: block;

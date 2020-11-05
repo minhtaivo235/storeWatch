@@ -1,6 +1,7 @@
 html,
 body {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 *,
@@ -1105,10 +1106,17 @@ hr {
   .header__middle .header__middle-wrap .header__wrapper .header__wrapRight i {
     font-size: 1.8rem;
   }
+  .header__bottom {
+    padding: 1rem 0;
+  }
+  .header__bottom .menu__list {
+    justify-content: space-around;
+  }
   .header__bottom .menu__list .menu__item:first-child {
-    padding-left: 5rem;
+    padding-left: unset;
   }
   .header__bottom .menu__list .menu__item {
+    padding: unset;
     font-size: 1.2rem;
   }
   .header__bottom .menu__list .menu__item a {

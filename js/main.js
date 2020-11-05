@@ -6,10 +6,34 @@ function nav(url) {
 const header = document.querySelector('.header');
 const slider = document.querySelector('.slider');
 let statusChangeHeader = false;
-let scrollPos = 0;
+let owlSlider = $(".slider .owl-carousel");
 let owlSearch = $(".search .owl-carousel");
+let owlProduct = $('.new-product .owl-carousel, .best-sale-product .owl-carousel, .best-view-product .owl-carousel');
 
 if (window.innerWidth > 1023) {
+
+    owlSlider.owlCarousel({
+        items: 1,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 3000
+
+    });
+    owlSearch.owlCarousel({
+        items: 5,
+        loop: false,
+        nav: true,
+        dots: false
+    });
+    owlProduct.owlCarousel({
+        items: 4,
+        loop: false,
+        nav: true,
+        dots: false,
+        margin: 10
+    });
+
+    let scrollPos = 0;
 
     document.addEventListener("scroll", function () {
         if (!statusChangeHeader) {
@@ -39,9 +63,7 @@ if (window.innerWidth > 1023) {
         }, 200);
     })
 }
-
-
-else {
+if ((window.innerWidth <= 1023) && (window.innerWidth > 740)) {
     owlSearch.owlCarousel({
         items: 3,
         loop: false,
@@ -49,9 +71,51 @@ else {
         dots: false
     });
 
+    owlProduct.owlCarousel({
+        items: 3,
+        loop: false,
+        nav: true,
+        dots: false,
+        margin: 10
+    });
+
     let header_bottom = document.querySelector('.header .header__bottom');
 
 
+    document.addEventListener("scroll", function () {
+        if (!statusChangeHeader) {
+            if (window.scrollY > 50) {
+                header_bottom.classList.add('d-none');
+                header.classList.add('fixed');
+                statusChangeHeader = true;
+            }
+
+        }
+        else {
+            if (window.scrollY <= 50) {
+                header_bottom.classList.remove('d-none');
+                header.classList.remove('fixed');
+                statusChangeHeader = false;
+            }
+        }
+    });
+}
+else {
+    owlSearch.owlCarousel({
+        items: 2,
+        loop: false,
+        nav: true,
+        dots: false
+    });
+
+    owlProduct.owlCarousel({
+        items: 2,
+        loop: false,
+        nav: true,
+        dots: false,
+        margin: 10
+    });
+    let header_bottom = document.querySelector('.header .header__bottom');
     document.addEventListener("scroll", function () {
         if (!statusChangeHeader) {
             if (window.scrollY > 50) {
