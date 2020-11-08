@@ -261,10 +261,6 @@ body {
     transform: translateY(0);
   }
 }
-.navigation {
-  display: none;
-}
-
 .slider__item {
   height: calc(100vh - 16.5rem);
   width: 100vw;
@@ -1163,7 +1159,7 @@ hr {
 
   .navigation {
     width: 33rem;
-    display: block;
+    height: 100vh;
     position: fixed;
     left: 0;
     top: 0;
@@ -1171,6 +1167,10 @@ hr {
     z-index: 6;
     padding: 1.6rem 1.6rem;
     overflow-y: scroll;
+    transition: linear 0.4s;
+    transform: translateX(-33rem);
+    opacity: 0;
+    visibility: hidden;
   }
   .navigation .nav-gender {
     width: 100%;
@@ -1318,11 +1318,23 @@ hr {
   .background-mask {
     width: 100vw;
     height: 100vh;
+    display: none;
     background-color: rgba(0, 0, 0, 0.6);
     position: fixed;
     top: 0;
     left: 0;
     z-index: 5;
+  }
+
+  .active-nav {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .active-mask {
+    display: block;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.8s;
   }
 }
 

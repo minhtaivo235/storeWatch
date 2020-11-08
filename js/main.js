@@ -82,8 +82,25 @@ window.addEventListener('DOMContentLoaded', function () {
         });
 
         let header_bottom = document.querySelector('.header .header__bottom');
+        let navMbDOM = document.querySelector('.header__middle .header__group-icon .header-bar');
+        let subMenuMbDOM = document.querySelector('.navigation');
+        let backgroundMask = document.querySelector('.background-mask');
+        let backMenuDOM = document.querySelector('.navigation .nav-gender .nav-icon--back');
 
+        // handle show/hide menu mobile
+        navMbDOM.onclick = function () {
+            subMenuMbDOM.classList.add('active-nav');
+            backgroundMask.classList.add('active-mask');
+        }
+        backgroundMask.onclick = backMenu;
+        backMenuDOM.onclick = backMenu;
 
+        function backMenu() {
+            subMenuMbDOM.classList.remove('active-nav');
+            backgroundMask.classList.remove('active-mask');
+        }
+
+        // handle menu fixed
         document.addEventListener("scroll", function () {
             if (!statusChangeHeader) {
                 if (window.scrollY > 50) {
