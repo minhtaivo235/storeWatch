@@ -83,6 +83,25 @@ window.addEventListener('DOMContentLoaded', function () {
             subMenuMbDOM.classList.remove('active-nav');
             backgroundMask.classList.remove('active-mask');
         }
+
+        let header_bottom = document.querySelector('.header .header__bottom');
+        document.addEventListener("scroll", function () {
+            if (!statusChangeHeader) {
+                if (window.scrollY > 50) {
+                    header_bottom.classList.add('d-none');
+                    header.classList.add('fixed');
+                    statusChangeHeader = true;
+                }
+
+            }
+            else {
+                if (window.scrollY <= 50) {
+                    header_bottom.classList.remove('d-none');
+                    header.classList.remove('fixed');
+                    statusChangeHeader = false;
+                }
+            }
+        });
         if (window.innerWidth > 740) {
 
             owlSearch.owlCarousel({
@@ -100,28 +119,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 margin: 10
             });
 
-            let header_bottom = document.querySelector('.header .header__bottom');
 
-
-
-            // handle menu fixed
-            document.addEventListener("scroll", function () {
-                if (!statusChangeHeader) {
-                    if (window.scrollY > 50) {
-                        header_bottom.classList.add('d-none');
-                        header.classList.add('fixed');
-                        statusChangeHeader = true;
-                    }
-
-                }
-                else {
-                    if (window.scrollY <= 50) {
-                        header_bottom.classList.remove('d-none');
-                        header.classList.remove('fixed');
-                        statusChangeHeader = false;
-                    }
-                }
-            });
         }
         if (window.innerWidth <= 739) {
             owlSearch.owlCarousel({
@@ -138,24 +136,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 dots: false,
                 margin: 10
             });
-            let header_bottom = document.querySelector('.header .header__bottom');
-            document.addEventListener("scroll", function () {
-                if (!statusChangeHeader) {
-                    if (window.scrollY > 50) {
-                        header_bottom.classList.add('d-none');
-                        header.classList.add('fixed');
-                        statusChangeHeader = true;
-                    }
 
-                }
-                else {
-                    if (window.scrollY <= 50) {
-                        header_bottom.classList.remove('d-none');
-                        header.classList.remove('fixed');
-                        statusChangeHeader = false;
-                    }
-                }
-            });
         }
     }
 
