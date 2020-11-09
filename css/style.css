@@ -1034,6 +1034,10 @@ hr {
   border: 0.1px solid #cccfcf;
 }
 
+.navigation {
+  display: none;
+}
+
 @media screen and (max-width: 1023px) {
   .header {
     height: 16rem;
@@ -1169,6 +1173,7 @@ hr {
     overflow-y: scroll;
     transition: linear 0.4s;
     transform: translateX(-33rem);
+    display: block;
     opacity: 0;
     visibility: hidden;
   }
