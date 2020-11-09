@@ -364,6 +364,7 @@ body {
   border: 1px solid #cccfcf;
   line-height: 2rem;
   text-align: center;
+  border-radius: 0.6rem;
 }
 .search .owl-nav {
   position: absolute;
@@ -952,11 +953,6 @@ body {
   font-size: 1.6rem;
   margin-top: 1rem;
   line-height: 2.4rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  text-overflow: ellipse;
-  overflow: hidden;
 }
 
 .w-100 {
@@ -1365,7 +1361,83 @@ hr {
     width: 20%;
   }
 }
+@media (min-width: 740px) and (max-width: 1023px) {
+  .new-product,
+.best-sale-product,
+.best-view-product {
+    padding: unset;
+    height: 50rem;
+  }
+  .new-product__item-img,
+.best-sale-product__item-img,
+.best-view-product__item-img {
+    height: 22rem;
+  }
+}
 @media (max-width: 739px) {
+  .search {
+    height: 12rem;
+  }
+  .search__title-icon {
+    font-size: 2rem;
+  }
+  .search__title-name {
+    font-size: 1.6rem;
+  }
+  .search__wrapitem {
+    margin-top: 1.2rem;
+    padding-bottom: 1rem;
+  }
+  .search__wrapitem .search__item {
+    align-items: center;
+    justify-content: center;
+    height: 8rem;
+    width: unset;
+    margin: 0 1rem;
+  }
+  .search__wrapitem .search__item-top, .search__wrapitem .search__item-bottom {
+    height: 3rem;
+    font-size: 1.2rem;
+    padding: 0.2rem 1.6rem;
+    border-radius: 0.6rem;
+  }
+
+  .new-product,
+.best-sale-product,
+.best-view-product {
+    padding: 1rem 0;
+    height: 48rem;
+    margin-bottom: 1rem;
+  }
+  .new-product__title,
+.best-sale-product__title,
+.best-view-product__title {
+    font-size: 2.4rem;
+  }
+  .new-product__item-img,
+.best-sale-product__item-img,
+.best-view-product__item-img {
+    height: 18rem;
+  }
+  .new-product__show-all,
+.best-sale-product__show-all,
+.best-view-product__show-all {
+    padding: 1rem 8rem;
+    border-radius: 0.6rem;
+  }
+
+  .new-product {
+    margin-top: 1rem;
+  }
+
+  .about-us__title {
+    font-size: 2.4rem;
+  }
+  .about-us__content {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+
   .footer .social {
     font-size: 1.2rem;
     display: flex;

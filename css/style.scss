@@ -562,6 +562,7 @@ body {
       border: 1px solid $border-color;
       line-height: 2rem;
       text-align: center;
+      border-radius: 0.6rem;
     }
   }
   @include owl-nav-center();
@@ -594,11 +595,11 @@ body {
     font-size: 1.6rem;
     margin-top: 1rem;
     line-height: 2.4rem;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    text-overflow: ellipse;
-    overflow: hidden;
+    // display: -webkit-box;
+    // -webkit-line-clamp: 3;
+    // -webkit-box-orient: vertical;
+    // text-overflow: ellipse;
+    // overflow: hidden;
   }
 }
 .w-100 {
@@ -1013,11 +1014,84 @@ hr {
     width: 20%;
   }
 }
+
 // table
 @media (min-width: 740px) and (max-width: 1023px) {
+  .new-product,
+  .best-sale-product,
+  .best-view-product {
+    padding: unset;
+    height: 50rem;
+    &__item {
+      &-img {
+        height: 22rem;
+      }
+    }
+  }
 }
 //mobile
 @media (max-width: 739px) {
+  .search {
+    height: 12rem;
+    &__title {
+      &-icon {
+        font-size: 2rem;
+      }
+      &-name {
+        font-size: 1.6rem;
+      }
+    }
+    &__wrapitem {
+      margin-top: 1.2rem;
+      padding-bottom: 1rem;
+      .search__item {
+        align-items: center;
+        justify-content: center;
+        height: 8rem;
+        width: unset;
+        margin: 0 1rem;
+
+        &-top,
+        &-bottom {
+          height: 3rem;
+          font-size: 1.2rem;
+          padding: 0.2rem 1.6rem;
+          border-radius: 0.6rem;
+        }
+      }
+    }
+  }
+  .new-product,
+  .best-sale-product,
+  .best-view-product {
+    padding: 1rem 0;
+    height: 48rem;
+    margin-bottom: 1rem;
+    &__title {
+      font-size: 2.4rem;
+    }
+    &__item {
+      &-img {
+        height: 18rem;
+      }
+    }
+    &__show-all {
+      padding: 1rem 8rem;
+      border-radius: 0.6rem;
+    }
+  }
+  .new-product {
+    margin-top: 1rem;
+  }
+  .about-us {
+    &__title {
+      font-size: 2.4rem;
+    }
+    &__content {
+      font-size: 1.4rem;
+      line-height: 2rem;
+    }
+  }
   .footer {
     .social {
       font-size: 1.2rem;
