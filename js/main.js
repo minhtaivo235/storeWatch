@@ -138,6 +138,14 @@ window.addEventListener('DOMContentLoaded', function () {
             });
 
         }
+        if (window.innerWidth <= 368) {
+            owlSearch.owlCarousel({
+                items: 1,
+                loop: false,
+                nav: true,
+                dots: false
+            });
+        }
     }
 
 })

@@ -1461,5 +1461,19 @@ hr {
     width: 40%;
   }
 }
+@media (max-width: 368px) {
+  .header__bottom .menu__list .menu__item {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .search .search__item-top,
+.search .search__item-bottom {
+    height: 3rem;
+    font-size: 1.1rem;
+    padding: 0.2rem 0.2rem;
+    border-radius: 0.6rem;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
